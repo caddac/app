@@ -1,0 +1,7 @@
+steps:
+- name: 'marshallford/podman:latest'
+  args: [ 'build', '-t', 'gcr.io/davec-op-project/app:$_TAG', '.' ]
+images:
+  - 'gcr.io/davec-op-project/app:$_TAG'
+substitutions:
+  _TAG: ${TAG_NAME/v/}
