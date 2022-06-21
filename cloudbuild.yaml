@@ -1,7 +1,9 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'gcr.io/davec-op-project/app:$_TAG', '.' ]
+  args: [ 'build', '-t', 'us-docker.pkg.dev/davec-op-project/gcr.io/app:$_TAG', '.' ]
 images:
-  - 'gcr.io/davec-op-project/app:$_TAG'
+  - 'us-docker.pkg.dev/davec-op-project/gcr.io/app:$_TAG'
 substitutions:
   _TAG: ${TAG_NAME/v/}
+
+  
